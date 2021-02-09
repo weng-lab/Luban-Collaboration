@@ -8,7 +8,7 @@
 
 source ~/.bashrc
 
-data=M27-Cntrl-KD-0h
+data=M29-MDA5-KD-mock-48h
 bam=~/Lab/Luban-Collaboration/Mapped/$data.bam
 gtf=~/Lab/Reference/Human/hg38/GENCODE32/gencode.v32.annotation.gtf
 outputDir=~/Lab/Luban-Collaboration/Gene-Counts
