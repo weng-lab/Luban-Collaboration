@@ -7,10 +7,10 @@ condition2 = args[2]
 
 rawData=read.table(paste0(condition1,".vs.",condition2,".matrix.txt"), row.names=1)
 
-expDesign=data.frame(rep(c("M27","M28","M29"),2),c("cond1","cond1","cond1","cond2","cond2","cod2"))
-names(expDesign) = c("donor", "condition")
+expDesign=data.frame(rep(c("cond1","cond2","cond3","cond4","cond5"),2),c(rep("donor1",5),rep("donor2",5)))
+names(expDesign) = c("condition","donor")
 
-dds = DESeqDataSetFromMatrix(countData = rawData, colData = expDesign, design = ~ donor + condition)
+dds = DESeqDataSetFromMatrix(countData = rawData, colData = expDesign, design = ~ condition + donor)
 dds = DESeq(dds, betaPrior=TRUE)
 res = results(dds)
 res = res[order(res$padj),]
